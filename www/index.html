@@ -1,6 +1,6 @@
 <html>
 		<head>
-		<script type="text/javascript" src="http://localhost/codeigniter/assets/jquery-1.7.2.min.js"></script>
+		
 
 		
 			<title>Registration Form</title>
@@ -9,15 +9,13 @@
 		</head>
 	<body>
 	
-	<?php echo base_url() ; ?>
-	<p><?php echo validation_errors(); ?></p>
-		<form name="regitration" method="post" action="<?php echo base_url(); ?>index.php/form_valid_controller/form_controller/send" >
+		<form name="regitration" method="post" action="http://www.uniquewebidea.com/phonegap/registration.php" >
 			<div> <h1 >Registration Form</h1>
 
-				<p><span>Name</span> :<input  type="text"  name="name" id="name"/><span><?php echo form_error('name'); ?></span></p>
-				<p><span>Mobile</span> :<input type="text"  name="mobile" id="mobile"/><span><?php echo form_error('mobile'); ?> </span></p>
-				<p><span>Password</span> :<input type="password"  name="password" id="password"/><span><?php echo form_error('password'); ?></span> </p>
-				<p><span>Confirm Password</span> :<input type="password"  name="cpass" id="cpass"/><span><?php echo form_error('cpass'); ?></span> </p>
+				<p><span>Name</span> :<input  type="text"  name="name" id="name"/></p>
+				<p><span>Mobile</span> :<input type="text"  name="mobile" id="mobile"/></p>
+				<p><span>Password</span> :<input type="password"  name="password" id="password"/></p>
+				<p><span>Confirm Password</span> :<input type="password"  name="cpass" id="cpass"/></p>
 				<p id="msg"></p>
 				<p><input type="button"  name="submit" id="send" value="Register"/> </p>
 			</div>
@@ -33,13 +31,13 @@ var name=$("name").val();
 var mobile=$("mobile").val();
 var password=$("password").val();
 var name=$("cpass").val();
+alert("sssss");
 jQuery.ajax({
-		
 		type : 'post',
 		url : 'http://www.uniquewebidea.com/phonegap/registration.php',
 		data :'name='+name+'&mobile='+mobile+'&password='+password,
 		success:function(msg){
-			$('#msg').hide();
+			$('#msg').html(msg);
 			
 	}	
 	});	
