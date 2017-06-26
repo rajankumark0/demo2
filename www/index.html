@@ -36,23 +36,16 @@ var name=$("#name").val();
 var mobile=$("#mobile").val();
 var password=$("#password").val();
 var name=$("#cpass").val();
-alert("sssss");
 jQuery.ajax({
-		type : 'post',
 		url : 'http://www.uniquewebidea.com/phonegap/registration.php',
+		type : 'post',
 		data :'name='+name+'&mobile='+mobile+'&password='+password,
-		crossDomain:true,
-		 dataType : 'json',
 		success:function(msg){
-			$('#msg').html(msg);
-			
-	}	
+		$('#msg').html(msg);
+		}	
 	});	
-
+  });
+  
 });
-
-
-
-})
 
 </script>
