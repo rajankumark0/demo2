@@ -36,13 +36,17 @@ var name=$("#name").val();
 var mobile=$("#mobile").val();
 var password=$("#password").val();
 var name=$("#cpass").val();
-jQuery.ajax({
-		url : 'http://www.uniquewebidea.com/phonegap/registration.php',
-		type : 'post',
-		data :'name='+name+'&mobile='+mobile+'&password='+password,
-		success:function(msg){
-		$('#msg').html(msg);
-		}	
+
+		$.ajax({
+          url: 'http://www.uniquewebidea.com/phonegap/registration.php',
+          dataType: 'jsonp',
+          jsonp: 'jsoncallback',
+          timeout: 5000,
+          success: function(data, status){
+                             /*Process your response here*/
+							 $('#msg').html(msg);
+                        }
+       });
 	});	
   });
   
