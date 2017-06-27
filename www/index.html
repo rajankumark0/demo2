@@ -14,7 +14,7 @@
 		</head>
 	<body>
 	
-		<form name="regitration" method="post" action="http://www.uniquewebidea.com/phonegap/registration.php" >
+		<form name="form" method="post" action="http://www.uniquewebidea.com/phonegap/registration.php" >
 			<div> <h1 >Registration Form</h1>
 
 				<p><span>Name</span> :<input  type="text"  name="name" id="name"/></p>
@@ -29,9 +29,31 @@
 </html>
 
 <script >
-
 $(document).ready(function(){
 $("#send").click(function(){
+   $.support.cors = true;
+$.ajax({
+   type: "POST",
+   url: "http://www.uniquewebidea.com/phonegap/registration.php",
+   contentType: "application/x-www-form-urlencoded; charset=utf-8",
+   dataType: "json",
+   //data: {identity: 'rajan', password: 'rajan'},
+   crossDomain: true,
+   cache: false,
+   success: function(data) {
+   alert('sssss');
+      /* obj = JSON.parse(data);
+       if (obj && obj.success === true) {
+          window.location.href = 'home.html';
+       }*/
+   },
+   error: function(e) {
+       alert('Error: ' + e.message);
+   }
+});
+
+/*
+
 var name=$("#name").val();
 var mobile=$("#mobile").val();
 var password=$("#password").val();
@@ -43,13 +65,15 @@ var name=$("#cpass").val();
           jsonp: 'jsoncallback',
           timeout: 5000,
           success: function(data, status){
-                             /*Process your response here*/
-							 $('#msg').html(msg);
+                             /*Process your response here
+							 var dataArray = jQuery.parseJSON(data);
+							 alert(dataArray);
                         }
-       });
-	});	
+       
+	});	*/
   });
   
 });
+
 
 </script>
