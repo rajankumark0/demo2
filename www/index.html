@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"  class="no-js">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"  >
 
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -10,11 +10,11 @@
 		
 			<title>Registration Form</title>
 			
-		 <script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
+		 <script type="text/javascript" src="js/jquery.min.js" ></script>
 		</head>
 	<body>
 	
-		<form name="form" method="post" action="http://www.uniquewebidea.com/phonegap/registration.php" >
+		<form name="regitration" method="post" action="" >
 			<div> <h1 >Registration Form</h1>
 
 				<p><span>Name</span> :<input  type="text"  name="name" id="name"/></p>
@@ -29,50 +29,25 @@
 </html>
 
 <script >
-$(document).ready(function(){
-$("#send").click(function(){
-   $.support.cors = true;
-$.ajax({
-   type: "POST",
-   url: "http://www.uniquewebidea.com/phonegap/registration.php",
-   contentType: "application/x-www-form-urlencoded; charset=utf-8",
-   dataType: "json",
-   //data: {identity: 'rajan', password: 'rajan'},
-   crossDomain: true,
-   cache: false,
-   success: function(data) {
-   alert('sssss');
-      /* obj = JSON.parse(data);
-       if (obj && obj.success === true) {
-          window.location.href = 'home.html';
-       }*/
-   },
-   error: function(e) {
-       alert('Error: ' + e.message);
-   }
-});
 
-/*
 
-var name=$("#name").val();
-var mobile=$("#mobile").val();
-var password=$("#password").val();
-var name=$("#cpass").val();
-
-		$.ajax({
-          url: 'http://www.uniquewebidea.com/phonegap/registration.php',
-          dataType: 'jsonp',
-          jsonp: 'jsoncallback',
-          timeout: 5000,
-          success: function(data, status){
-                             /*Process your response here
-							 var dataArray = jQuery.parseJSON(data);
-							 alert(dataArray);
-                        }
-       
-	});	*/
-  });
+  $('#send').click(function(){
   
+ 
+    $.ajax({
+        type: 'POST',
+        data: 'rajan',
+		crossOrigin: true,
+		 async:true,
+            
+        url: 'http://www.uniquewebidea.com/phonegap/registration.php',
+        success: function(data){
+            $('#msg').html(data);
+        }
+       
+    });
+ 
+    
 });
 
 

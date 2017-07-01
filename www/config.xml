@@ -22,5 +22,9 @@
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
 
-	
+	<httpProtocol>
+    <customHeaders>
+        <add name="Access-Control-Allow-Origin" value="*" />
+    </customHeaders>
+</httpProtocol>
 </widget>
