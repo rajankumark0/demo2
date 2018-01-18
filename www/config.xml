@@ -27,4 +27,5 @@
         <add name="Access-Control-Allow-Origin" value="*" />
     </customHeaders>
 </httpProtocol>
+<preference name="OverrideUserAgent" value="Mozilla/5.0 Google" />
 </widget>
