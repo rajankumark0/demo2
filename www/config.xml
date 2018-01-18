@@ -7,9 +7,13 @@
     <author email="rajankumark0@gmail.com" href="http://cordova.io">
        rajan team
     </author>
-	<plugin name="org.apache.cordova.console" spec="0.2.11"/>
-    	<plugin name="org.apache.cordova.device" spec="0.2.3" />
-		 <plugin name="org.apache.cordova.inappbrowser"   />
+		<plugin name="cordova-plugin-console" spec="~1.1.0" />
+    	
+    	
+    	<plugin name="cordova-plugin-device" spec="~2.0.1" />
+		
+		<plugin name="cordova-plugin-file" spec="~6.0.1" />
+		
     	   <preference name="android-build-tool" value="ant|gradle" />
 
     	<plugin name="cordova-plugin-googleplus" source="npm">
